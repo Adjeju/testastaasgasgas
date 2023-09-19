@@ -1,20 +1,5 @@
 export const categoriesConfig = [
   {
-    id: "planning-and-preparation",
-    title: "Planing And Preparation",
-    subCategories: [
-      {
-        title: "General Observation",
-        contentFileName: "planning-and-preparation/general-observation-1.pdf",
-      },
-      {
-        title: "Self Assessment And Self Reflection",
-        contentFileName:
-          "planning-and-preparation/self-assessment-and-self-reflection.pdf",
-      },
-    ],
-  },
-  {
     id: "classroom-environment",
     title: "Classroom Environment",
     subCategories: [
@@ -28,6 +13,10 @@ export const categoriesConfig = [
         contentFileName:
           "classroom-environment/classroom-environment-teacher.pdf",
       },
+      {
+        title: "Use Of Blackboard",
+        contentFileName: "classroom-environment/using-the-board.pdf",
+      },
     ],
   },
   {
@@ -35,11 +24,11 @@ export const categoriesConfig = [
     title: "Instruction",
     subCategories: [
       {
-        title: "Using The Board",
-        contentFileName: "instruction/using-the-board.pdf",
+        title: "General Observation",
+        contentFileName: "instruction/general-observation-1.pdf",
       },
       {
-        title: "Class Managment",
+        title: "Class Management",
         contentFileName: "instruction/class-managment.pdf",
       },
       {
@@ -77,6 +66,11 @@ export const categoriesConfig = [
       {
         title: "Self Reflection Form",
         contentFileName: "self-reflection/self-reflection.pdf",
+      },
+      {
+        title: "Self Assessment And Self Reflection",
+        contentFileName:
+          "self-reflection/self-assessment-and-self-reflection.pdf",
       },
     ],
   },
