@@ -24,10 +24,6 @@ export const categoriesConfig = [
     title: "Instruction",
     subCategories: [
       {
-        title: "General Observation",
-        contentFileName: "instruction/general-observation-1.pdf",
-      },
-      {
         title: "Class Management",
         contentFileName: "instruction/class-managment.pdf",
       },
