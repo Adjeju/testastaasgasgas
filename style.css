@@ -1,6 +1,32 @@
-table,
-th,
-td {
-  border: 1px solid black;
-  border-collapse: collapse;
+body {
+  background-color: #fffdd0;
+}
+
+button {
+  text-align: start;
+}
+
+.purple {
+  background-color: #d8c5e3;
+  color: #ab80c2;
+}
+
+.blue {
+  background-color: #99ffff;
+  color: #7acccc;
+}
+
+.orange {
+  background-color: #fbceb1;
+  color: #f8a36d;
+}
+
+.yellow {
+  background-color: #f4c430;
+  color: #c9a021;
+}
+
+.green {
+  background-color: #50c878;
+  color: #32a057;
 }

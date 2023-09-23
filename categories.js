@@ -4,12 +4,12 @@ export class Categories {
 
     const params = new URLSearchParams(window.location.search);
 
-    const category = params.get('category');
-    const subCategory = params.get('sub-category');
+    const category = params.get("category");
+    const subCategory = params.get("sub-category");
 
     this.selectedCategory = category;
     this.selectedSubCategory = subCategory;
-    this.wrap = document.createElement('div');
+    this.wrap = document.createElement("div");
   }
 
   downloadPDF(markdownText, fileName) {
@@ -41,26 +41,26 @@ export class Categories {
 
   renderSubCategories(subCategories) {
     //TODO: ref to createBackBtn
-    const backBtn = document.createElement('button');
-    backBtn.innerHTML = 'Back';
-    backBtn.addEventListener('click', () => {
+    const backBtn = document.createElement("button");
+    backBtn.innerHTML = "Back";
+    backBtn.addEventListener("click", () => {
       this.renderCategories();
     });
-    backBtn.className = 'btn btn-primary mb-2';
-    this.wrap.innerHTML = '';
+    backBtn.className = "btn btn-primary mb-2";
+    this.wrap.innerHTML = "";
 
     this.wrap.appendChild(backBtn);
 
-    const contentWrap = document.createElement('div');
-    contentWrap.className = 'list-group';
+    const contentWrap = document.createElement("div");
+    contentWrap.className = "list-group";
 
     subCategories.map((subCategory) => {
-      const subCategoryWrap = document.createElement('button');
-      subCategoryWrap.className = 'list-group-item list-group-item-action';
+      const subCategoryWrap = document.createElement("button");
+      subCategoryWrap.className = `list-group-item text-left fw-bolder ${subCategory.style}`;
       subCategoryWrap.innerHTML = subCategory.title;
-      subCategoryWrap.type = 'button';
+      subCategoryWrap.type = "button";
 
-      subCategoryWrap.addEventListener('click', () => {
+      subCategoryWrap.addEventListener("click", () => {
         // fetch('./files/' + subCategory.contentFileName)
         //   .then((res) => res.text())
         //   .then(this.renderContent.bind(this, subCategories))
@@ -72,6 +72,14 @@ export class Categories {
           subCategory.contentFileName
         )();
       });
+      if (subCategory.title === "Formal Observations") {
+        const link = document.createElement("a");
+        link.className = `list-group-item text-left fw-bolder ${subCategory.style}`;
+        link.innerHTML = "Curriculum and Course Materials";
+        link.href =
+          "https://ngschoolteacher.wixsite.com/ngscht/guidelines-and-supplements";
+        contentWrap.appendChild(link);
+      }
 
       contentWrap.appendChild(subCategoryWrap);
     });
@@ -80,22 +88,22 @@ export class Categories {
   }
 
   renderContent(subCategories, content) {
-    this.wrap.innerHTML = '';
+    this.wrap.innerHTML = "";
 
     //TODO: ref to createBackBtn
-    const backBtn = document.createElement('button');
-    backBtn.innerHTML = 'Back';
-    backBtn.addEventListener('click', () => {
+    const backBtn = document.createElement("button");
+    backBtn.innerHTML = "Back";
+    backBtn.addEventListener("click", () => {
       this.renderSubCategories(subCategories);
     });
-    backBtn.className = 'btn btn-primary mb-2 me-2';
+    backBtn.className = "btn btn-primary mb-2 me-2";
 
-    const downloadPDFBtn = document.createElement('a');
-    downloadPDFBtn.innerHTML = 'Download PDF';
+    const downloadPDFBtn = document.createElement("a");
+    downloadPDFBtn.innerHTML = "Download PDF";
     downloadPDFBtn.download = content;
-    downloadPDFBtn.href = './files/' + content;
+    downloadPDFBtn.href = "./files/" + content;
 
-    downloadPDFBtn.className = 'btn btn-primary mb-2';
+    downloadPDFBtn.className = "btn btn-primary mb-2";
 
     this.wrap.appendChild(backBtn);
     this.wrap.appendChild(downloadPDFBtn);
@@ -104,18 +112,18 @@ export class Categories {
     // // const mdShadow = md.attachShadow({ mode: 'open' });
     // md.innerHTML = marked.parse(content);
 
-    const pdfViewer = document.createElement('div');
-    pdfViewer.className = 'w-100 overflow-auto border rounded shadow';
-    pdfViewer.style.height = 'calc(100vh - 46px - 48px)';
+    const pdfViewer = document.createElement("div");
+    pdfViewer.className = "w-100 overflow-auto border rounded shadow";
+    pdfViewer.style.height = "calc(100vh - 46px - 48px)";
 
-    pdfjsLib.getDocument('./files/' + content).promise.then(function (pdf) {
+    pdfjsLib.getDocument("./files/" + content).promise.then(function (pdf) {
       for (var pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
         pdf.getPage(pageNumber).then(function (page) {
           var scale = 1.5;
           var viewport = page.getViewport({ scale: scale });
 
-          var canvas = document.createElement('canvas');
-          var context = canvas.getContext('2d');
+          var canvas = document.createElement("canvas");
+          var context = canvas.getContext("2d");
           canvas.width = viewport.width;
           canvas.height = viewport.height;
 
@@ -133,16 +141,16 @@ export class Categories {
   }
 
   renderCategories() {
-    this.wrap.innerHTML = '';
-    const categoryWrap = document.createElement('div');
-    categoryWrap.className = 'list-group';
+    this.wrap.innerHTML = "";
+    const categoryWrap = document.createElement("div");
+    categoryWrap.className = "list-group";
     this.categoriesConfig.map((category) => {
-      const categoryItem = document.createElement('button');
-      categoryItem.className = 'list-group-item list-group-item-action';
+      const categoryItem = document.createElement("button");
+      categoryItem.className = `list-group-item text-left fw-bolder ${category.style}`;
       categoryItem.innerHTML = category.title;
-      categoryItem.type = 'button';
+      categoryItem.type = "button";
 
-      categoryItem.addEventListener('click', () => {
+      categoryItem.addEventListener("click", () => {
         this.renderSubCategories(category.subCategories);
       });
       categoryWrap.appendChild(categoryItem);
