@@ -69,7 +69,8 @@ export class Categories {
         this.renderContent.bind(
           this,
           subCategories,
-          subCategory.contentFileName
+          subCategory.contentFileName,
+          subCategory.link
         )();
       });
       if (subCategory.title === "Formal Observations") {
@@ -87,7 +88,7 @@ export class Categories {
     this.wrap.appendChild(contentWrap);
   }
 
-  renderContent(subCategories, content) {
+  renderContent(subCategories, content, link) {
     this.wrap.innerHTML = "";
 
     //TODO: ref to createBackBtn
@@ -103,10 +104,18 @@ export class Categories {
     downloadPDFBtn.download = content;
     downloadPDFBtn.href = "./files/" + content;
 
-    downloadPDFBtn.className = "btn btn-primary mb-2";
+    downloadPDFBtn.className = "btn btn-primary mb-2 me-2";
 
     this.wrap.appendChild(backBtn);
     this.wrap.appendChild(downloadPDFBtn);
+
+    if (link) {
+      const templateLink = document.createElement("a");
+      templateLink.innerHTML = "Get Template";
+      templateLink.href = link;
+      templateLink.className = "btn btn-primary mb-2 me-2";
+      this.wrap.appendChild(templateLink);
+    }
 
     // const md = document.createElement('div');
     // // const mdShadow = md.attachShadow({ mode: 'open' });
