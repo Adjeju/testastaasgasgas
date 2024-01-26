@@ -58,7 +58,6 @@ export class WelcomeWindow {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       const university = e.target.elements["university"].value;
-      console.log(university);
 
       amplitude.track("test_welcome_modal_submit", {
         university,
