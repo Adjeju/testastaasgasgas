@@ -133,6 +133,31 @@ export const categoriesConfig = [
         style: "green",
         link: null,
       },
+      {
+        title: "Teacher Evaluation Form",
+        contentFileName: "resources/Teacher-evaluation-form.pdf",
+        style: "green",
+        link: null,
+      },
+      {
+        title: "Teachers Standards Adult Guidance English",
+        contentFileName:
+          "resources/Teachers-standards-adult-guidance-english.pdf",
+        style: "green",
+        link: null,
+      },
+      {
+        title: "Teacher Standards Checklist",
+        contentFileName: "resources/Teacher-standards-checklist.pdf",
+        style: "green",
+        link: null,
+      },
+      {
+        title: "Lesson Observation Rubrics",
+        contentFileName: "resources/Lesson-Observation-Rubrics.pdf",
+        style: "green",
+        link: null,
+      },
     ],
   },
 ];
