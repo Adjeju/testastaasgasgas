@@ -89,11 +89,28 @@ export const categoriesConfig = [
         link: "https://docs.google.com/document/d/1JPSP0za9q3d094084CoEHwkXsGTUf1Ee/edit",
       },
       {
-        title: "Self Assessment And Self Reflection",
-        contentFileName:
-          "self-reflection/self-assessment-and-self-reflection.pdf",
+        title: "Teacher Lesson Reflection Form",
+        contentFileName: "self-reflection/teacher-lesson-reflection-form.pdf",
         style: "orange",
-        link: null,
+        link: "https://docs.google.com/document/d/1-3C1SMjGFrH_FzPNVP0Bk5fiNFrmbthx/edit",
+      },
+      {
+        title: "Teacher Self Reflection Template",
+        contentFileName: "self-reflection/teacher-self-reflection-template.pdf",
+        style: "orange",
+        link: "https://docs.google.com/document/d/1pQuxF1zfFNOn0RoVpxEKP9GZPT5PIUgT/edit",
+      },
+      {
+        title: "Questionnaire 1. Before Your Teaching Practice",
+        contentFileName: "self-reflection/questionnaire-1.pdf",
+        style: "orange",
+        link: "https://docs.google.com/document/d/1C1mo76VkBqjGDs5wSQNmeEL3g_B8cnzm/edit",
+      },
+      {
+        title: "Questionnaire 2. After Your Teaching Practice",
+        contentFileName: "self-reflection/questionnaire-2.pdf",
+        style: "orange",
+        link: "https://docs.google.com/document/d/187E0p5jQDRElVm0DWhkgiuxQ5VoDzp73/edit",
       },
     ],
   },
