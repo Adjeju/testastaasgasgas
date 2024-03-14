@@ -16,13 +16,10 @@ export class WelcomeWindow {
     const modalContent = document.createElement("div");
     modalContent.className = "modal-content";
     modalContent.innerHTML = `
-      <div class="modal-header">
-        <h1 class="modal-title fs-5">Вкажіть інформацію про себе</h1>
-      </div>
       <div class="modal-body">
       </div>
       <div class="modal-footer">
-        <button type="submit" form="welcomeForm" class="btn btn-primary">Відправити</button>
+        <button type="submit" form="welcomeForm" class="btn btn-primary">Send</button>
       </div>
     `;
 
@@ -32,13 +29,13 @@ export class WelcomeWindow {
     universityFormGroup.className = "form-group mb-2";
 
     const universityLabel = document.createElement("label");
-    universityLabel.innerHTML = "Ваш університет";
+    universityLabel.innerHTML = "Your Educational Establishment";
     universityLabel.htmlFor = "university";
     universityLabel.className = "form-label";
 
     const universityInput = document.createElement("input");
     universityInput.className = "form-control mb-2";
-    universityInput.placeholder = "Введіть назву вашого університету";
+    universityInput.placeholder = "Enter Your Educational Establishment";
     universityInput.id = "university";
     universityInput.name = "university";
     universityInput.required = true;
